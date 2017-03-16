@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "992772188333",
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.robhaenen.floow2"
+        }
+    },
+    "dependent_plugins": {}
+}
