@@ -42,7 +42,7 @@
 	<div id="offline-screen"></div>
 	<div class="social-button-facebook button_inline" onclick="browse();"></div>
 	
-	<iframe src="https://app.roootsj.com" name="container-frame" id="container-frame" onload="loaded();" seamless="seamless" width="100%" height="100%" style="border:none; position:absolute;"></iframe>
+	<iframe src="http://www.floow2.com/floow2-nl-mobiel.html" name="container-frame" id="container-frame" onload="loaded();" seamless="seamless" width="100%" height="100%" style="border:none; position:absolute;"></iframe>
        
 	<script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>   
@@ -72,7 +72,35 @@
 		window.addEventListener("message", receiveMessage, false);
 
 		
-		
+		function getLanguage() {
+				   navigator.globalization.getPreferredLanguage(onSuccess, onError);
+
+				   function onSuccess(language) {
+					  alert('language: ' + language.value + '\n');
+					 // alert('deviceid: ' + deviceId + '\n');
+						var lang = language.value;
+						var res = lang.split("-");
+						if(res[0] == 'nl'){
+							//document.getElementById('container-frame').src = 'http://www.floow2.com/floow2-nl-mobiel.html';
+						}
+						else{
+							document.getElementById('container-frame').src = 'http://www.floow2.com/fl2-en-mobile.html';
+						}
+					}
+
+				   function onError(){
+						 if(flag){
+								if(notificationFlag){
+									document.getElementById('container-frame').src = 'http://www.floow2.com/floow2-nl-mobiel.html;
+								}
+								else{
+									document.getElementById('container-frame').src = 'http://www.floow2.com/floow2-nl-mobiel.html';
+								}
+								flag = false;
+							}
+					   }
+					
+				}
 
 		function onDeviceReady(){
 		alert('hi');
@@ -81,12 +109,12 @@
 
 			push.on('registration', function(data) {
 				deviceId = data.registrationId;
-				getPosition();				
+				getLanguage();			
 			}); 
 			
 			push.on('error', function(e) {
 				notificationFlag = false;
-				getPosition();
+				getLanguage();
 			}); 
 
 			push.on('notification', function(data) {
