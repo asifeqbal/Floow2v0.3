@@ -71,42 +71,12 @@
 
 		window.addEventListener("message", receiveMessage, false);
 
-		function getPosition() {
-			var options = {
-				enableHighAccuracy: true,
-				maximumAge: 3600000
-			}
-
-			var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-		}
 		
-		function onSuccess(position) {
-			if(flag){
-				if(notificationFlag){					
-					document.getElementById('container-frame').src = 'https://app.roootsj.com/index.php?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&devType=Android&deviceId='+deviceId;
-				}
-				else{
-					document.getElementById('container-frame').src = 'https://app.roootsj.com/index.php?lat='+position.coords.latitude+'&lon='+position.coords.longitude;
-				}
-				flag = false;
-			}
-		}
-
-		function onError(error) {
-			if(flag){
-				if(notificationFlag){
-					document.getElementById('container-frame').src = 'https://app.roootsj.com/index.php?devType=Android&deviceId='+deviceId;
-				}
-				else{
-					document.getElementById('container-frame').src = 'https://app.roootsj.com';
-				}
-				flag = false;
-			}
-		}
 		
 
 		function onDeviceReady(){
-			var push = PushNotification.init({ "android": {"senderID": "560922606646"},
+		alert('hi');
+			var push = PushNotification.init({ "android": {"senderID": "992772188333"},
 			"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 			push.on('registration', function(data) {
