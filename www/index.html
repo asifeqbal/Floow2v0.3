@@ -72,7 +72,7 @@
 		window.addEventListener("message", receiveMessage, false);
 
 		
-		function getLanguage() {
+	/*	function getLanguage() {
 				   navigator.globalization.getPreferredLanguage(onSuccess, onError);
 
 				   function onSuccess(language) {
@@ -100,7 +100,7 @@
 							}
 					   }
 					
-				}
+				} */
 
 		function onDeviceReady(){
 		alert('hi');
@@ -108,13 +108,14 @@
 			"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 			push.on('registration', function(data) {
-				deviceId = data.registrationId;
-				getLanguage();			
+			//	deviceId = data.registrationId;
+				alert(data.registrationId);
+			//	getLanguage();			
 			}); 
 			
 			push.on('error', function(e) {
 				notificationFlag = false;
-				getLanguage();
+			//	getLanguage();
 			}); 
 
 			push.on('notification', function(data) {
